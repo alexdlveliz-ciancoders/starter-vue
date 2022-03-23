@@ -1,0 +1,8 @@
+.load-mask-content.blur {
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    filter: blur(5px);
+    transition: filter 0.2s ease-out;
+}

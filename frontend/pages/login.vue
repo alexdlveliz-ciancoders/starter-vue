@@ -1,29 +1,32 @@
 <template>
-  <div class="blue-gradient-bg">
-    <v-container>
-      <v-row justify="center" align="center">
-        <h1 class="text-center">
-          Bienvenido a CianStarter
-        </h1>
-      </v-row>
-      <v-row justify="center" align="center">
-        <h3>
-          Página de login
-        </h3>
-      </v-row>
-    </v-container>
-    <br>
-    <v-container>
-      <v-row justify="center" align="center">
-        <v-col cols="12" md="3">
-          <LoginForm />
-        </v-col>
-      </v-row>
-    </v-container>
+  <div>
+    <div class="blue-gradient-bg">
+      <v-container>
+        <v-row justify="center" align="center">
+          <h1 class="text-center">
+            Bienvenido a CianStarter
+          </h1>
+        </v-row>
+        <v-row justify="center" align="center">
+          <h3>
+            Página de login
+          </h3>
+        </v-row>
+      </v-container>
+      <br>
+      <v-container>
+        <v-row justify="center" align="center">
+          <v-col cols="12" md="3">
+            <LoginForm />
+          </v-col>
+        </v-row>
+      </v-container>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import LoginForm from '@/components/login/LoginForm'
 
 export default {
@@ -31,7 +34,12 @@ export default {
   components: {
     LoginForm
   },
-  layout: 'empty'
+  layout: 'empty',
+  computed: {
+    ...mapGetters('auth', {
+      loader: 'getLoader'
+    })
+  }
 }
 </script>
 
