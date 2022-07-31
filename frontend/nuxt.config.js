@@ -27,7 +27,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '@/plugins/notifications.server', mode: 'server' },
-    { src: '@/plugins/notifications.client', mode: 'client' },
+    { src: '@/plugins/notifications.client', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

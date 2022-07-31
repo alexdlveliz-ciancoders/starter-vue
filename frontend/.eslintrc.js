@@ -16,6 +16,11 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    'arrow-parens': [2, 'as-needed']
+    'arrow-parens': [2, 'as-needed'],
+    'vue/html-self-closing': ['error', {
+      html: {
+        void: 'always'
+      }
+    }]
   }
 }

@@ -8,6 +8,13 @@
       app
     >
       <v-list>
+        <v-list-item class="pa-1">
+          <v-img
+            :src="require('@/assets/img/logo.png')"
+            alt="Logo"
+          />
+        </v-list-item>
+        <hr />
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
@@ -89,23 +96,45 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
   name: 'DefaultLayout',
   data () {
     return {
       clipped: false,
-      drawer: false,
+      drawer: true,
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-pencil',
+          title: 'Home',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
+          icon: 'mdi-view-split-vertical',
+          title: 'Basic components',
           to: '/inspire'
+        },
+        {
+          icon: 'mdi-view-split-vertical',
+          title: 'Grids',
+          to: '/inspire'
+        },
+        {
+          icon: 'mdi-view-split-vertical',
+          title: 'Notificaciones',
+          to: '/inspire'
+        },
+        {
+          icon: 'mdi-view-split-vertical',
+          title: 'Tabs',
+          to: '/inspire'
+        },
+        {
+          icon: 'mdi-view-split-vertical',
+          title: 'Log Out',
+          to: '/login'
         }
       ],
       miniVariant: false,
@@ -113,6 +142,24 @@ export default {
       rightDrawer: false,
       title: 'Vuetify.js'
     }
+  },
+  computed: {
+    ...mapGetters('auth', {
+      me: 'getMe'
+    })
+  },
+  mounted () {
+    // Se verifica que el usuario esté logueado
+    const token = localStorage.getItem('token')
+    if (!token) {
+      // Si no hay token en localstorage
+      this.$router.push('/login')
+    } else if (!this.me.username) {
+      this.getMe(token)
+    }
+  },
+  methods: {
+    ...mapActions('auth', ['getMe'])
   }
 }
 </script>

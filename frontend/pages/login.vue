@@ -13,7 +13,7 @@
           </h3>
         </v-row>
       </v-container>
-      <br>
+      <br />
       <v-container>
         <v-row justify="center" align="center">
           <v-col cols="12" md="3">

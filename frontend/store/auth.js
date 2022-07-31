@@ -65,5 +65,17 @@ export const actions = {
         commit(SET_ERROR, error)
       })
       .finally(() => commit(SET_LOADER, false))
+  },
+  getMe ({ commit }, token) {
+    commit(SET_LOADER, true)
+    this.$axios.get('/user/me/', {
+      headers: {
+        Authorization: `Token ${token}`
+      }
+    })
+      .then(response => {
+        commit(SET_ME, response.data)
+      })
+      .finally(() => commit(SET_LOADER, false))
   }
 }
