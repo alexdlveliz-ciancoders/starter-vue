@@ -114,7 +114,7 @@ export default {
         {
           icon: 'mdi-view-split-vertical',
           title: 'Basic components',
-          to: '/inspire'
+          to: '/basic-components'
         },
         {
           icon: 'mdi-view-split-vertical',
