@@ -14,6 +14,15 @@
         small-chips
         show-size
       />
+      <h4>Multi File input with counter</h4>
+      <client-only>
+        <v-file-input
+          label="Multi File Input"
+          show-size
+          counter
+          multiple
+        />
+      </client-only>
     </v-col>
   </v-row>
 </template>

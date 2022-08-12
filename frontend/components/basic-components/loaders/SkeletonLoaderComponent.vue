@@ -9,7 +9,7 @@
       <h4>Skeleton loader personalizado</h4>
       <v-skeleton-loader
         class="mx-auto"
-        type="list-item-avatar, divider, card-heading, table, actions"
+        type="list-item-avatar, divider, card-heading, table"
       />
     </v-col>
   </v-row>

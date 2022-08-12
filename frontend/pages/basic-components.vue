@@ -2,7 +2,7 @@
   <div>
     <h1>Componentes básicos</h1>
     <v-row class="mt-1">
-      <v-col cols="7">
+      <v-col cols="12" lg="7" md="7" sm="12">
         <v-card>
           <v-card-title>
             Form Inputs
@@ -31,9 +31,20 @@
           </v-card-text>
         </v-card>
       </v-col>
+      <v-col cols="12" lg="5" md="5" sm="12">
+        <v-card>
+          <v-card-title>
+            Select Form Inputs
+          </v-card-title>
+          <v-divider />
+          <v-card-text>
+            <select-form-inputs-component />
+          </v-card-text>
+        </v-card>
+      </v-col>
     </v-row>
     <v-row>
-      <v-col cols="7">
+      <v-col cols="12" lg="7" md="7" sm="12">
         <v-card>
           <v-card-title>
             Loaders
@@ -47,7 +58,7 @@
             <circular-loader-component />
           </v-card-text>
           <v-divider />
-          <h4>Linear</h4>
+          <linear-loader-component />
         </v-card>
       </v-col>
     </v-row>
@@ -67,7 +78,9 @@ import IconButtons from '@/components/basic-components/button-components/IconBut
 import InputFieldsComponent from '@/components/basic-components/input-fields/InputFieldsComponent'
 import FileFieldsComponent from '@/components/basic-components/input-fields/FileFieldsComponent'
 import SkeletonLoaderComponent from '@/components/basic-components/loaders/SkeletonLoaderComponent'
-import CircularLoaderComponent from '@/components/basic-components/loaders/CircularLoaderComponent.vue'
+import CircularLoaderComponent from '@/components/basic-components/loaders/CircularLoaderComponent'
+import LinearLoaderComponent from '@/components/basic-components/loaders/LinearLoaderComponent'
+import SelectFormInputsComponent from '@/components/basic-components/select-form-inputs/SelectFormInputsComponent.vue'
 
 export default {
   name: 'BasicComponents',
@@ -83,7 +96,9 @@ export default {
     InputFieldsComponent,
     FileFieldsComponent,
     SkeletonLoaderComponent,
-    CircularLoaderComponent
+    CircularLoaderComponent,
+    LinearLoaderComponent,
+    SelectFormInputsComponent
   }
 }
 </script>
